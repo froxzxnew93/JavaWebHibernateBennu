@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-nov-2018 0:20:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.TNota" table="t_nota" catalog="pruebabennu" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nota" type="double">
+            <column name="nota" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

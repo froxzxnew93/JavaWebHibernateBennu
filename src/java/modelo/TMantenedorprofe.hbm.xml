@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-nov-2018 0:20:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.TMantenedorprofe" table="t_mantenedorprofe" catalog="pruebabennu" optimistic-lock="version">
+        <id name="profesorIdFk" type="int">
+            <column name="profesor_id_fk" />
+            <generator class="foreign">
+                <param name="property">TProfesor</param>
+            </generator>
+        </id>
+        <many-to-one name="TAsignatura" class="modelo.TAsignatura" fetch="select">
+            <column name="asignatura_id_fk" not-null="true" />
+        </many-to-one>
+        <one-to-one name="TProfesor" class="modelo.TProfesor" constrained="true"></one-to-one>
+    </class>
+</hibernate-mapping>

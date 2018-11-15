@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15-nov-2018 0:20:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelo.TAsignaturacolegio" table="t_asignaturacolegio" catalog="pruebabennu" optimistic-lock="version">
+        <id name="idAsignaturaFk" type="int">
+            <column name="id_asignatura_fk" />
+            <generator class="foreign">
+                <param name="property">TAsignatura</param>
+            </generator>
+        </id>
+        <one-to-one name="TAsignatura" class="modelo.TAsignatura" constrained="true"></one-to-one>
+        <many-to-one name="TColegio" class="modelo.TColegio" fetch="select">
+            <column name="id_colegio_fk" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
